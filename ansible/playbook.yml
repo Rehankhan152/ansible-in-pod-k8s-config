@@ -1,0 +1,11 @@
+- name: Configure Target App from Inside Pod
+  hosts: nginx-pod
+  become: true
+  tasks:
+    - name: Ping the target
+      ping:
+
+    - name: Create a test file
+      file:
+        path: /tmp/ansible-managed.txt
+        state: touch
